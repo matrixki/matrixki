@@ -1,0 +1,93 @@
+.post-page{
+    padding: 60px 0 120px;
+}
+.post-article{
+    margin: 0 0 60px;
+    .post-title{
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1.04;
+        letter-spacing: -.015em;
+        margin: 0 0 30px;
+    }
+    .post-excerpt{
+        margin: 0 0 20px;
+        p{
+            font-size: 28px;
+            color: rgba(0,0,0,.54);
+            line-height: 1.22;
+            margin: 0;
+        }
+    }
+    .post-content{
+        font-size: 21px;
+        line-height: 1.58;
+        letter-spacing: -0.003em;
+        p{
+            font-size: 21px;
+            font-weight: 400;
+            line-height: 1.58;
+            letter-spacing: -0.003em;
+            margin: 0 0 30px;            
+        }
+        blockquote{
+            border-left: 2px solid $black;
+            padding: 0 0 0 30px;
+            font-size: 21px;
+            line-height: 1.58;
+            margin: 0 0 40px;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+            @include rwd($mobile){
+                width: 100%;
+            }
+        }
+        h2{
+            font-size: 34px;
+            line-height: 1.15;
+            margin: 0 0 60px;
+        }
+        h3{
+            font-size: 23px;
+            line-height: 1.22;
+            margin: 0 0 15px;
+        }
+        a{
+            text-decoration: underline;
+            color: $black;
+        }
+        pre{
+            background: #272822;
+            color: #f8f8f2;
+            padding: 8px;
+        }
+    }
+}
+
+.cat-label{
+    background: rgba(0,0,0,.05);
+    color: rgba(0,0,0,.68);
+    font-size: 15px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin: 0 8px 8px 0;
+}
+
+.tag-label{
+    position: relative;
+    border: 1px solid rgba(0,0,0,.68);
+    color: rgba(0,0,0,.68);
+    font-size: 15px;
+    padding: 5px 10px 5px 20px;
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    &:before{
+        content: '#';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        line-height: 32px;
+    }   
+}

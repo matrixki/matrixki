@@ -1,0 +1,8 @@
+body{
+}
+a, .btn{
+    &:focus{
+        outline: none;
+        @include box-shadow(none);
+    }
+}

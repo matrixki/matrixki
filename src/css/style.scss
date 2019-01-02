@@ -1,0 +1,17 @@
+/* import globals */
+@import "mixin";
+@import "variables";
+@import "global";
+
+/* import components */
+@import "components";
+
+/* import pages */
+@import "pages/index";
+@import "pages/post";
+@import "pages/blog";
+
+/* css notes */
+/*
+  header z-index: 9999
+*/
