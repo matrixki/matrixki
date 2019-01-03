@@ -1,13 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HttpsRedirect from 'react-https-redirect';
 import './css/style.scss';
 import Index from './pages/index.js';
 import Blog from './pages/blog.js';
 import Post from './pages/post.js';
 
 const AppRouter = () => (
-    <HttpsRedirect>
         <Router>
             <div>
                 <Switch>
@@ -17,7 +15,6 @@ const AppRouter = () => (
                 </Switch>
             </div>
         </Router>
-    </HttpsRedirect>
 );
 
 export default AppRouter;
