@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Layout from '../components/layout';
 import axios from 'axios';
 import PostImage from '../components/post-image';

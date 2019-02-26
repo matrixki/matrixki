@@ -9,6 +9,7 @@ class PostImage extends React.Component {
         this.state = {
             media: {},
             hasImage: false,
+            substitute: this.props.substitute === 'display' ? true : false,
         };
     }
 
@@ -42,7 +43,7 @@ class PostImage extends React.Component {
                     <img src={this.state.media.source_url} alt={this.state.media.alt_text} />
                 }
                 {
-                    !this.state.hasImage && 
+                    !this.state.hasImage && this.state.substitute &&
                     <img src={require('../static/img/post-placeholder.png')} alt="blog post on matrixki.com" />
                 }
             </div>

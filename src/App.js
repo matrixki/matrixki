@@ -6,15 +6,15 @@ import Blog from './pages/blog.js';
 import Post from './pages/post.js';
 
 const AppRouter = () => (
-        <Router>
-            <div>
-                <Switch>
-                    <Route path="/" exact component={Index} />
-                    <Route path="/blog" exact component={Blog} />
-                    <Route path="/blog/:slug" component={Post} />
-                </Switch>
-            </div>
-        </Router>
+    <Router>
+        <div>
+            <Switch>
+                <Route path="/" exact component={Index} />
+                <Route path="/blog" exact component={Blog} />
+                <Route path="/blog/:slug" component={Post} />
+            </Switch>
+        </div>
+    </Router>
 );
 
 export default AppRouter;

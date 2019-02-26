@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Layout from '../components/layout';
 import axios from 'axios';
 import PostImage from '../components/post-image';
@@ -61,7 +61,7 @@ class Blog extends React.Component {
                                 <div className="col-md-4 col-sm-6" key={post.id}>
                                     <div className="post-block">
                                         <Link to={ '/blog/' + post.slug }>
-                                            <PostImage media={ post.featured_media ? post.featured_media : false } />
+                                            <PostImage media={ post.featured_media ? post.featured_media : false } substitute="display" />
                                             <h2 className="post-title">{post.title.rendered}</h2>
                                             <p className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}></p>
                                         </Link>

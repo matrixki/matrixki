@@ -13,7 +13,7 @@ class WorkBlock extends React.Component {
                     { (this.props.link && this.props.unit) ? (' @') : ('') }
                     { 
                         this.props.link && this.props.unit && 
-                        <a href={this.props.link} target="_blank">&nbsp;{this.props.unit}</a>
+                        <a href={this.props.link} target="_blank" rel="noopener noreferrer">&nbsp;{this.props.unit}</a>
                     }
                 </h5>
                 { this.props.title && 
@@ -22,6 +22,9 @@ class WorkBlock extends React.Component {
                 <label className="year">{this.props.year}</label>
                 { this.props.city && 
                     <label className="city">{this.props.city}</label>
+                }
+                { this.props.highlight &&
+                    <p className="highlight">{ this.props.highlight }</p>
                 }
             </div>
         );

@@ -126,6 +126,18 @@
         color: rgba(0,0,0,.75);
         margin: 0;
     }
+    .highlight{
+        color: rgb(249,99,2);
+        padding: 0 0 0 15px;
+        position: relative;
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 1.5;
+            content: '-';
+        }
+    }
 }
 
 .post-block{

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Layout from '../components/layout';
 import Typed from 'typed.js';
 import WorkBlock from '../components/work-block';
@@ -176,8 +176,8 @@ class Index extends React.Component {
                                             <h2>I'm Mike Ko, <br />experienced Software engineer focus on web development.</h2>
                                             <p>I have rich experience on web development, building and customization.<br />Below are the languages and tools I am familiar with: <br />HTML, CSS, Javascript(React, Vue, Augular), PHP, Ruby on Rails, Wordpress.<br />Feel free to drop me a message with an email.</p>
                                             <p className="resume">
-                                                <a className="social-icon linkedin" href="https://www.linkedin.com/in/mingkaiko/" target="_blank"><i className="fab fa-linkedin-in"></i></a>
-                                                <a className="social-icon medium" href="https://www.linkedin.com/in/mingkaiko/" target="_blank"><i className="fab fa-medium-m"></i></a>
+                                                <a className="social-icon linkedin" href="https://www.linkedin.com/in/mingkaiko/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
+                                                <a className="social-icon medium" href="https://www.linkedin.com/in/mingkaiko/" target="_blank" rel="noopener noreferrer"><i className="fab fa-medium-m"></i></a>
                                             </p>
                                         </div>
                                     </div>
@@ -194,10 +194,10 @@ class Index extends React.Component {
                                 </div>
                                 <div className="col-12">
                                     <h3 className="section-subtitle">Work Experience</h3>
-                                    <WorkBlock name="Senior Full Stack Developer" link="https://ddstudio.tw" unit="DD Studio" year="2017-2018" city="Taipei, Taiwan" />
-                                    <WorkBlock name="Full Stack Developer" link="https://tixinn.com" unit="TIXINN.com" year="2014-2017" city="Taipei, Taiwan" />
-                                    <WorkBlock name="Senior Front End Developer" link="http://afusion.com" unit="Asia Fusion Technology" year="2013-2014" city="Taipei, Taiwan" />
-                                    <WorkBlock name="Software Engineer" link="http://www.itstrategists.com" unit="IT Strategists" year="2012-2013" city="Los Angeles, U.S." />                                                                       
+                                    <WorkBlock name="Senior Software Engineer" link="https://workboard.com" unit="Workboard" year="2018 Oct. - Present" city="Redwood City, U.S." />
+                                    <WorkBlock name="Senior Full Stack Developer" link="https://ddstudio.tw" unit="DD Studio" year="2014 Oct. - 2018 Sep." city="Taipei, Taiwan" highlight="startup project TIXINN.com got acquired early 2018" />
+                                    <WorkBlock name="Senior Front End Developer" link="http://afusion.com" unit="Asia Fusion Technology" year="2013 May. - 2014 Sep." city="Taipei, Taiwan" />
+                                    <WorkBlock name="Software Engineer" link="http://www.itstrategists.com" unit="IT Strategists" year="2012-2013 Apr." city="Los Angeles, U.S." />                                                                       
                                 </div>
                                 <div className="col-12">
                                     <h3 className="section-subtitle">Education</h3>
@@ -219,7 +219,7 @@ class Index extends React.Component {
                                     <div className="col-md-4 col-sm-6" key={post.id}>
                                         <div className="post-block">
                                             <Link to={'/blog/'+post.slug } >
-                                                <PostImage media={ post.featured_media ? post.featured_media : false } />
+                                                <PostImage media={ post.featured_media ? post.featured_media : false } substitute="display" />
                                                 <h2 className="post-title">{post.title.rendered}</h2>
                                                 <p className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}></p>
                                             </Link>

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react';
+import { Link } from "react-router-dom";
 
 class Header extends React.Component {
     
@@ -59,7 +59,7 @@ class Header extends React.Component {
                             </Link>
                         </div>
                         <div className="col header-right">
-                            <a href="#" className="btn mobile-menu-trigger d-md-none" onClick={this.mobileMenuTrigger}>
+                            <a href="#" rel="noopener noreferrer" className="btn mobile-menu-trigger d-md-none" onClick={this.mobileMenuTrigger}>
                                 <span className="bar"></span>
                                 <span className="bar"></span>
                             </a>
@@ -71,7 +71,7 @@ class Header extends React.Component {
                                     <Link to="/blog">Blog</Link>
                                 </li>
                                 <li>
-                                    <a target="_blank" href="https://igtext.matrixki.com">Igtext</a>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://igtext.matrixki.com">Igtext</a>
                                 </li>                                
                             </ul>
                         </div>

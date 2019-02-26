@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class MobileMenu extends React.Component {
     
@@ -18,7 +18,7 @@ class MobileMenu extends React.Component {
                         <Link to="/blog">Blog</Link>
                     </li>
                     <li>
-                        <a target="_blank" href="https://igtext.matrixki.com">Igtext</a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://igtext.matrixki.com">Igtext</a>
                     </li>
                 </ul>
             </div>
