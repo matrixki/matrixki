@@ -196,8 +196,8 @@ class Index extends React.Component {
                                     <h3 className="section-subtitle">Work Experience</h3>
                                     <WorkBlock name="Senior Software Engineer" link="https://workboard.com" unit="Workboard" year="2018 Oct. - Present" city="Redwood City, U.S." />
                                     <WorkBlock name="Senior Full Stack Developer" link="https://ddstudio.tw" unit="DD Studio" year="2014 Oct. - 2018 Sep." city="Taipei, Taiwan" highlight="startup project TIXINN.com got acquired early 2018" />
-                                    <WorkBlock name="Senior Front End Developer" link="http://afusion.com" unit="Asia Fusion Technology" year="2013 May. - 2014 Sep." city="Taipei, Taiwan" />
-                                    <WorkBlock name="Software Engineer" link="http://www.itstrategists.com" unit="IT Strategists" year="2012-2013 Apr." city="Los Angeles, U.S." />                                                                       
+                                    <WorkBlock name="Senior Front End Developer" link="http://afusion.com" unit="Asia Fusion Technology" year="2013 May - 2014 Sep." city="Taipei, Taiwan" />
+                                    <WorkBlock name="Software Engineer" link="http://www.itstrategists.com" unit="IT Strategists" year="2012 May - 2013 Apr." city="Los Angeles, U.S." />                                                                       
                                 </div>
                                 <div className="col-12">
                                     <h3 className="section-subtitle">Education</h3>
