@@ -62,7 +62,7 @@ class Blog extends React.Component {
                                     <div className="post-block">
                                         <Link to={ '/blog/' + post.slug }>
                                             <PostImage media={ post.featured_media ? post.featured_media : false } substitute="display" />
-                                            <h2 className="post-title">{post.title.rendered}</h2>
+                                            <h2 className="post-title" dangerouslySetInnerHTML={{__html: post.title.rendered}}></h2>
                                             <p className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}></p>
                                         </Link>
                                     </div>    

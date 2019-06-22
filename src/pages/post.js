@@ -40,7 +40,7 @@ class Post extends React.Component {
             <Layout>  
                 { this.state.post &&
                 <Helmet>
-                    <title>{ this.state.post.title.rendered } | Mike's personal blog</title>
+                    <title>{this.state.post.title.rendered} | Mike's personal blog</title>
                     <meta name="description" content={ this.state.post.excerpt.rendered.replace(/<[^>]+>/g, '') } />
                 </Helmet>           
                 }                   
@@ -57,8 +57,7 @@ class Post extends React.Component {
                                             <li className="breadcrumb-item">
                                                 <Link to="/blog">Blog</Link>
                                             </li>
-                                            <li className="breadcrumb-item active" aria-current="page">
-                                                { this.state.post.title.rendered }
+                                            <li className="breadcrumb-item active" aria-current="page" dangerouslySetInnerHTML={{__html: this.state.post.title.rendered}}>
                                             </li>
                                         </ol>
                                     </nav>                        
@@ -71,7 +70,7 @@ class Post extends React.Component {
                                                 <CatLabel catId={ cat } key={ cat }></CatLabel>
                                             )
                                         }
-                                        <h1 className="post-title">{ this.state.post.title.rendered }</h1>
+                                        <h1 className="post-title" dangerouslySetInnerHTML={{__html: this.state.post.title.rendered}}></h1>
                                         <h2 className="post-excerpt" dangerouslySetInnerHTML={{__html: this.state.post.excerpt.rendered}}></h2>
                                         <PostImage media={ this.state.post.featured_media ? this.state.post.featured_media : false } og={true} />
                                         <div className="post-content" dangerouslySetInnerHTML={{__html: this.state.post.content.rendered}}></div>
