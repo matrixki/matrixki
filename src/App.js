@@ -11,6 +11,7 @@ const AppRouter = () => (
             <Switch>
                 <Route path="/" exact component={Index} />
                 <Route path="/blog" exact component={Blog} />
+                <Route path="/blog/page/:pageNum" exact component={Blog} />
                 <Route path="/blog/:slug" component={Post} />
             </Switch>
         </div>

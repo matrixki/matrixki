@@ -11,24 +11,34 @@ class Blog extends React.Component {
         super(props);
         this.state = {
             posts: [],
+            totalPages: 1,
+            currentPage: 1
         };
     }
 
     componentDidMount(){
-        axios.get(''+window.apiUrl+'/wp-json/wp/v2/posts?per_page=9')
-        .then( res => {            
-            return res.data;
+        this.getPosts(this.props.match.params.pageNum);
+    }
+
+    getPosts(page = 1){
+        let url = window.apiUrl+'/wp-json/wp/v2/posts?per_page=9&page='+page;
+        axios.get(url)
+        .then( res => {
+            return res;
         } )
-        .then( posts => {
-            console.log(posts);
-            this.setState((state, props) => ({
+        .then( res => {
+            let posts = res.data;
+            this.setState({
+                totalPages: parseInt(res.headers['x-wp-totalpages']),
                 posts: posts,
-            }));
+                currentPage: parseInt(page)
+            });
             document.body.classList.remove('header-transparent');
         } );
     }
 
     render(){
+        let paginationListsSize = Array(this.state.totalPages).fill(1);
         return (
             <Layout>
                 <Helmet>
@@ -40,7 +50,7 @@ class Blog extends React.Component {
                 </Helmet>                
                 <div className="blog-page">
                     <div className="container">
-                    <div className="row">
+                        <div className="row">
                             <div className="col-12">
                                 <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
@@ -68,7 +78,20 @@ class Blog extends React.Component {
                                     </div>    
                                 </div>
                             ) }
-                        </div>                    
+                        </div>
+                        { this.state.totalPages > 1 &&
+                        <div className="row">
+                            <div className="col-12">
+                                <ul className="pagination">
+                                    { paginationListsSize.map( (value, index) => {
+                                        return  <li className={ this.state.currentPage === (index+1) ? "page-item active" : "page-item" } key={index}>
+                                                    <Link to={"/blog/page/"+(index+1)} onClick={ () => this.getPosts(index+1)} className="page-link">{index+1}</Link>
+                                                </li>
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                        }                   
                     </div>
                 </div>    
             </Layout>
