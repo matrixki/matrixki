@@ -6,7 +6,7 @@ import PostImage from '../components/post-image';
 import CatLabel from '../components/cat-label';
 import TagLabel from '../components/tag-label';
 import Helmet from "react-helmet";
-
+import { FacebookProvider, Comments } from 'react-facebook';
 
 class Post extends React.Component {
 
@@ -84,6 +84,10 @@ class Post extends React.Component {
                                     <div className="ads">
                                         <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-client="ca-pub-2405574601626411" data-ad-slot="8743887896" data-ad-format="auto" data-full-width-responsive="true" />
                                     </div>
+                                    <FacebookProvider appId="442636336610128">
+                                        <Comments href={`https://matrixki.com${ this.props.location.pathname }`} />
+                                    </FacebookProvider>
+                                    <div className="fb-comments" data-href={`https://blog.matrixki.com${ this.props.location.pathname }`} data-width="" data-numposts="5"></div>
                                 </div>
                             </div>
                         </div>
