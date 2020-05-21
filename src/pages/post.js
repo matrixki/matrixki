@@ -71,7 +71,6 @@ class Post extends React.Component {
                                             )
                                         }
                                         <h1 className="post-title" dangerouslySetInnerHTML={{__html: this.state.post.title.rendered}}></h1>
-                                        <h2 className="post-excerpt" dangerouslySetInnerHTML={{__html: this.state.post.excerpt.rendered}}></h2>
                                         <PostImage media={ this.state.post.featured_media ? this.state.post.featured_media : false } og={true} />
                                         <div className="post-content" dangerouslySetInnerHTML={{__html: this.state.post.content.rendered}}></div>
                                         {   
