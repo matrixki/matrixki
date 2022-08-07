@@ -95,10 +95,10 @@ class Index extends React.Component {
                                     <div className="col-md-9">
                                         <div className="index-intro">
                                             <h2>I'm Mike Ko, <br />experienced Software engineer focus on web development.</h2>
-                                            <p>I have rich experience on web development, building and customization.<br />Below are the languages and tools I am familiar with: <br />HTML, CSS, Javascript(React, Vue, Augular), PHP, Ruby on Rails, Wordpress.<br />Feel free to drop me a message with an email.</p>
+                                            <p>Over 10 years experience on web development, building and customization.<br />I am familiar with both frontend and backend skills<br />Feel free to drop me a message on Linkedin.</p>
                                             <p className="resume">
                                                 <a className="social-icon linkedin" href="https://www.linkedin.com/in/mingkaiko/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
-                                                <a className="social-icon medium" href="https://www.linkedin.com/in/mingkaiko/" target="_blank" rel="noopener noreferrer"><i className="fab fa-medium-m"></i></a>
+                                                <a className="social-icon medium" href="https://medium.com/@matrixki" target="_blank" rel="noopener noreferrer"><i className="fab fa-medium-m"></i></a>
                                             </p>
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@ class Index extends React.Component {
                                     <h3 className="section-subtitle">Work Experience</h3>
                                     <WorkBlock name="Senior Staff Software Engineer" link="https://www.paloaltonetworks.com/" unit="Palo Alto Networks" year="2019 July. - Present" city="Santa Clara, U.S." />
                                     <WorkBlock name="Senior Software Engineer" link="https://workboard.com" unit="Workboard" year="2018 Oct. - 2019 June" city="Redwood City, U.S." />
-                                    <WorkBlock name="Senior Full Stack Developer" link="https://ddstudio.tw" unit="DD Studio" year="2014 Oct. - 2018 Sep." city="Taipei, Taiwan" highlight="startup project TIXINN.com got acquired early 2018" />
+                                    <WorkBlock name="Senior Full Stack Developer" link="https://eoscreative.co/" unit="DD Studio(Now: Eos Creative)" year="2014 Oct. - 2018 Sep." city="Taipei, Taiwan" highlight="startup project TIXINN.com got acquired early 2018" />
                                     <WorkBlock name="Senior Front End Developer" link="http://afusion.com" unit="Asia Fusion Technology" year="2013 May - 2014 Sep." city="Taipei, Taiwan" />
                                     <WorkBlock name="Software Engineer" link="http://www.itstrategists.com" unit="IT Strategists" year="2012 May - 2013 Apr." city="Los Angeles, U.S." />                                                                       
                                 </div>

@@ -47,7 +47,7 @@
         h2{
             font-size: 34px;
             line-height: 1.15;
-            margin: 0 0 60px;
+            margin: 60px 0;
         }
         h3{
             font-size: 23px;
@@ -56,12 +56,19 @@
         }
         a{
             text-decoration: underline;
-            color: $black;
+            color: $text-grey;
         }
         pre{
             background: #272822;
             color: #f8f8f2;
             padding: 8px;
+        }
+        figure{
+            figcaption{
+                font-size: 13px;
+                color: $black-grey;
+                padding: 4px 6px;
+            }
         }
     }
 }
