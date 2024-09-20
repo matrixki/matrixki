@@ -18,7 +18,6 @@ class CatLabel extends React.Component {
                 return res.data;
             } )
             .then( cat => {
-                console.log(cat);
                 this.setState((state, props) => ({
                     cat: cat,
                 }));
