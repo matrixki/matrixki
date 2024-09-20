@@ -30,12 +30,13 @@ class Post extends React.Component {
                 post: post,
             });
             document.body.classList.remove('header-transparent');
-            //activate google ads
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
         } );
     }
 
     render(){
+
+        const oneAdContent = `<div id="div-onead-draft"></div>`;
+
         return (
             <Layout>  
                 { this.state.post &&
@@ -81,7 +82,7 @@ class Post extends React.Component {
                                         }
                                     </article>
                                     <div className="ads">
-                                        <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-client="ca-pub-2405574601626411" data-ad-slot="8743887896" data-ad-format="auto" data-full-width-responsive="true" />
+                                        <div dangerouslySetInnerHTML={{ __html: oneAdContent }} />
                                     </div>
                                     <FacebookProvider appId="442636336610128">
                                         <Comments href={`https://matrixki.com${ this.props.location.pathname }`} />

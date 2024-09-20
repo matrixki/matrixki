@@ -17,6 +17,24 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script type="text/javascript">
+            var custom_call = function (params) {
+                if (params.hasAd) {
+                    console.log('TD has AD')
+                } else {
+                    console.log('TD AD Empty')
+                }
+                }
+            ONEAD_TEXT = {};
+            ONEAD_TEXT.pub = {};
+            ONEAD_TEXT.pub.uid = "2000318";
+            ONEAD_TEXT.pub.slotobj = document.getElementById("div-onead-draft");
+            ONEAD_TEXT.pub.player_mode = "text-drive";
+            ONEAD_TEXT.pub.queryAdCallback = custom_call;
+            window.ONEAD_text_pubs = window.ONEAD_text_pubs || [];
+            ONEAD_text_pubs.push(ONEAD_TEXT);
+        </script>
+        <script src="https://ad-specs.guoshipartners.com/static/js/ad-serv.min.js"></script>
     </head>
     <body>
         <script>

@@ -3,15 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
-    "node-sass": "^4.11.0",
+    "axios": "^1.7.7",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-facebook": "^8.0.4",
     "react-ga": "^2.6.0",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.2",
+    "react-scripts": "^5.0.1",
     "typed.js": "^2.0.9"
   },
   "scripts": {
@@ -28,5 +27,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "sass": "^1.79.2"
+  }
 }
