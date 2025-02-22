@@ -356,6 +356,7 @@ nav .breadcrumb {
   color: rgb(249, 99, 2);
   padding: 0 0 0 15px;
   position: relative;
+  margin-bottom: 0;
 }
 .work-block .highlight::before {
   position: absolute;
