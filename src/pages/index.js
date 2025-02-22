@@ -115,9 +115,10 @@ class Index extends React.Component {
                                 </div>
                                 <div className="col-12">
                                     <h3 className="section-subtitle">Work Experience</h3>
-                                    <WorkBlock name="Senior Staff Software Engineer" link="https://www.paloaltonetworks.com/" unit="Palo Alto Networks" year="2019 July. - Present" city="Santa Clara, U.S." />
+                                    <WorkBlock name="Senior Software Engineer" link="https://www.doorstead.com/" unit="Doorstead" year="2023 Nov. - Present" city="Taipei, Taiwan (Remote)" />
+                                    <WorkBlock name="Senior Staff Software Engineer" link="https://www.paloaltonetworks.com/" unit="Palo Alto Networks" year="2019 July - 2023 July" city="Santa Clara, U.S." />
                                     <WorkBlock name="Senior Software Engineer" link="https://workboard.com" unit="Workboard" year="2018 Oct. - 2019 June" city="Redwood City, U.S." />
-                                    <WorkBlock name="Senior Full Stack Developer" link="https://eoscreative.co/" unit="DD Studio(Now: Eos Creative)" year="2014 Oct. - 2018 Sep." city="Taipei, Taiwan" highlight="startup project TIXINN.com got acquired early 2018" />
+                                    <WorkBlock name="Full Stack Developer" link="https://eoscreative.co/" unit="DD Studio(Now: Eos Creative)" year="2014 Oct. - 2018 Sep." city="Taipei, Taiwan" highlights={["AppWorks accelator batch #11", "startup project TIXINN.com got acquired early 2018", "Lead Developer at DD Studio"]} />
                                     <WorkBlock name="Senior Front End Developer" link="http://afusion.com" unit="Asia Fusion Technology" year="2013 May - 2014 Sep." city="Taipei, Taiwan" />
                                     <WorkBlock name="Software Engineer" link="http://www.itstrategists.com" unit="IT Strategists" year="2012 May - 2013 Apr." city="Los Angeles, U.S." />                                                                       
                                 </div>

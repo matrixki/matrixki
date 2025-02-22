@@ -23,8 +23,10 @@ class WorkBlock extends React.Component {
                 { this.props.city && 
                     <label className="city">{this.props.city}</label>
                 }
-                { this.props.highlight &&
-                    <p className="highlight">{ this.props.highlight }</p>
+                { this.props.highlights && this.props.highlights.length > 0 &&
+                    this.props.highlights.map( (highlight, index) => {
+                        return (<p key={index} className="highlight">{ highlight }</p>);
+                    })
                 }
             </div>
         );
