@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Layout from '../components/layout';
 import PostImage from '../components/post-image';
-import CatLabel from '../components/cat-label';
 import TagLabel from '../components/tag-label';
 import Helmet from "react-helmet";
 import { FacebookProvider, Comments } from 'react-facebook';
@@ -72,10 +71,6 @@ class Post extends React.Component {
                                 </div>
                                 <div className="col col-md-10 offset-md-1">
                                     <article className="post-article">
-                                        {
-                                            this.state.post.tags.length > 0 &&
-                                            <CatLabel name={ this.state.post.tags[0] }></CatLabel>
-                                        }
                                         <h1 className="post-title">{this.state.post.title}</h1>
                                         <PostImage src={ this.state.post.image } alt={ this.state.post.title } og={true} />
                                         <div className="post-content" dangerouslySetInnerHTML={{__html: this.state.post.content}}></div>

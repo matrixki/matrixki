@@ -658,15 +658,6 @@ nav .breadcrumb {
   padding: 4px 6px;
 }
 
-.cat-label {
-  background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.68);
-  font-size: 15px;
-  padding: 5px 10px;
-  display: inline-block;
-  margin: 0 8px 8px 0;
-}
-
 .tag-label {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.68);
