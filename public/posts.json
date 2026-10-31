@@ -1,5 +1,21 @@
 [
   {
+    "id": "db9b4e4464c1",
+    "slug": "當架個人部落格不再是門技術時-那-就不架了-db9b4e4464c1",
+    "aliases": [],
+    "title": "當架個人部落格不再是門技術時，那…就不架了",
+    "date": "2026-10-31T15:30:58.000Z",
+    "link": "https://medium.com/@matrixki/%E7%95%B6%E6%9E%B6%E5%80%8B%E4%BA%BA%E9%83%A8%E8%90%BD%E6%A0%BC%E4%B8%8D%E5%86%8D%E6%98%AF%E9%96%80%E6%8A%80%E8%A1%93%E6%99%82-%E9%82%A3-%E5%B0%B1%E4%B8%8D%E6%9E%B6%E4%BA%86-db9b4e4464c1",
+    "tags": [
+      "personal-website",
+      "ai-agent",
+      "blog"
+    ],
+    "image": "https://cdn-images-1.medium.com/max/1024/1*Pp6Io6d1CH1-q_Rpn5CADA.png",
+    "excerpt": "2025年底，AI model加速發展的情況下，工程師的開發日常出現了巨大的改變：過往透過一個好的prompt request AI model 得回精確答案加速開發的工作模式，一眨眼 26年直接跳成了agentic coding，AI a…",
+    "content": "<p>2025年底，AI model加速發展的情況下，工程師的開發日常出現了巨大的改變：過往透過一個好的prompt request AI model 得回精確答案加速開發的工作模式，一眨眼 26年直接跳成了agentic coding，AI agent直接幫你寫code，還越寫越好，不管是什麼領域(frontend, backend, infra, server, linux, kernel, devops, ML, data etc…)的軟體工程師，短短幾個月內，舊式的軟體工程思維已經不適用於現代的軟體開發。</p><p>部落格，以前是門技術的活，從需要一個對外的網站 UI 讓使用者閱讀，到背後要有資料庫存文章資料，進而要有一個後台讓部落格主來寫文章，每一個步驟都可以討論到更進階的技術問題：前端要用什麼來寫？純HTML or UI framework? 資料庫要選什麼？後台CRUD介面呢？寫文章的編輯器？支援上傳圖片(multimedia)嗎？流量高的時候怎麼辦？</p><p>在Web 2.0 時代，根據不同的部落格需求有很多不同的產品，平台方面有被Yahoo! 收購的 Tumblr (後來又被Automattic收購)、現在我正在寫的Medium (<em>雖然產出幾乎是 0</em>)，系統方面有最多開發者使用的Wordpress(.com, .org)，台灣也有許多的部落格平台：早期的痞客邦、後來出來的方格子。</p><p>許多軟體工程師都會使用線上的平台或者是自架一個部落格來分享許多技術的文章，一方面是展示基本的技術能力，一方面是有個地方可以記錄程式學習。</p><p>那在 AI agent 時代下，做出一個部落格網站或者是系統需要多久呢？Vibe coding 的不懂技術的人可能四五小時可以搞定，Agentic coding的工程師快一點搞不好半小時就有了，在這個前提下，架部落格不再是門可以展現技術的活了，那工程師還需要架部落格網站嗎？</p><h4>What about my blog?</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*weySGGrkmT4I4iyzx6owlg.png\" /><figcaption>My old blog architecture</figcaption></figure><p>本來我的部落格架構是：先花錢租了台遠振虛擬機，架了 Wordpress 部落格CMS後台(with MySQL DB)，透過Wordpress default API 讓我前端的React + React Router框架讀取上面的文章，這樣的個人網站快速地展示了對於使用前端框架和使用第三方應用程式的整合力，也簡單地呈現對於 CMS 的理解，域名的指向使用等基本理解。</p><p>但現在 2026 這些能力都不值一提，與 agent 快速互動討論後，我打開了我的遠振主機，退了租用虛擬主機，把網站搬到 AI 時下很紅 (easy deployment) 的 <a href=\"https://vercel.com/\">Vercel</a> (免費版)，再透過免費又好用的Medium 做我的 CMS 寫文章，那剩下的問題就只剩下要怎麼讀取 Medium 的文章？既有文章的搬家方面，Medium雖然沒有提供open API，但它可以export content。</p><p>搬家完成了，那新的文章呢？透過Medium提供的 RSS (每個用戶連結僅提供最新的十篇文章)，每當新文章發佈後，我們就去 trigger 一個新的 UI build，這個 build 過程中會有一個script去讀取 RSS feed 找有沒有還沒更新到內部的文章，有的話就補進來，這個 build 也可以加進去 Github workflow auto-trigger 這樣網站上的文章就再度與Medium同步了。</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*gOKrbj6TvB21sXZeLMpqGQ.png\" /><figcaption>My new blog architecture</figcaption></figure><p>於是乎，我的個人網站 ( <a href=\"https://matrixki.com\">matrixki.com</a> )回來了，在等孩子練球的兩小時內完成上述所有項目 (包含deployment + DNS resolve)，雖然我不知道為什麼要架回來 (<em>都沒在寫</em>)，但反正新的架構也不用花錢，看看能不能給自己動力多寫幾篇文章囉？(FYI: 這篇文章其實是為了測試我的 Github workflow…)</p>"
+  },
+  {
     "id": "8fccc7530249",
     "slug": "doorstead-沒租客也能保障房東收到租金的房地產新創-8fccc7530249",
     "aliases": [
