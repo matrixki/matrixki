@@ -1,11 +1,9 @@
-# Fetch new Medium posts once a day and commit public/posts.json if it changed.
+# Fetch new Medium posts and commit public/posts.json if it changed.
 # The push triggers Vercel to rebuild and deploy the site.
-# Can also be run by hand from the Actions tab right after publishing.
+# Run it by hand from the Actions tab right after publishing on Medium.
 name: Sync Medium posts
 
 on:
-  schedule:
-    - cron: '0 1 * * *' # daily at 01:00 UTC (09:00 Taipei)
   workflow_dispatch:
 
 permissions:
