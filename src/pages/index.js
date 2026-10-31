@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import Layout from '../components/layout';
 import Typed from 'typed.js';
 import WorkBlock from '../components/work-block';
-import axios from 'axios';
 import PostImage from '../components/post-image';
 import Helmet from "react-helmet";
 import { scrollIt } from '../global/animation';
+import { getPosts } from '../global/posts';
 
 class Index extends React.Component {
 
@@ -39,14 +39,10 @@ class Index extends React.Component {
         };
         this.typed = new Typed(this.typedEl.current, options);
 
-        axios.get(''+window.apiUrl+'/wp-json/wp/v2/posts?per_page=3')
-        .then( res => {            
-            return res.data;
-        } )
+        getPosts()
         .then( posts => {
-            console.log(posts);
             this.setState((state, props) => ({
-                posts: posts,
+                posts: posts.slice(0, 3),
             }));
         } );
     }
@@ -71,7 +67,7 @@ class Index extends React.Component {
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Mike's personal blog</title>
-                    <meta name="description" content="Mike's personal blog. Just another place to record my life. Build with react + Wordpress api. Will share more about life in silicon valley, programming, coding, startup." />
+                    <meta name="description" content="Mike's personal blog. Just another place to record my life. Build with react + Medium. Will share more about life in silicon valley, programming, coding, startup." />
                     <meta name="keywords" content="Mike, matrixki, programming, coding, javascript, startup"></meta>
                     <meta property="og:image" content={ require('../static/img/mike_avatar.jpg') } />
                 </Helmet>                    
@@ -143,9 +139,9 @@ class Index extends React.Component {
                                     <div className="col-md-4 col-sm-6" key={post.id}>
                                         <div className="post-block">
                                             <Link to={'/blog/'+post.slug } >
-                                                <PostImage media={ post.featured_media ? post.featured_media : false } substitute="display" />
-                                                <h2 className="post-title" dangerouslySetInnerHTML={{__html: post.title.rendered}}></h2>
-                                                <p className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}></p>
+                                                <PostImage src={ post.image } alt={ post.title } substitute="display" />
+                                                <h2 className="post-title">{post.title}</h2>
+                                                <p className="excerpt">{post.excerpt}</p>
                                             </Link>
                                         </div>    
                                     </div>

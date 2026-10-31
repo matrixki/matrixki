@@ -14,7 +14,11 @@
     "typed.js": "^2.0.9"
   },
   "scripts": {
+    "fetch-posts": "node scripts/fetch-medium.js",
+    "import-medium-export": "node scripts/import-medium-export.js",
+    "prestart": "npm run fetch-posts",
     "start": "react-scripts start",
+    "prebuild": "npm run fetch-posts",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

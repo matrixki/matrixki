@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Layout from '../components/layout';
-import axios from 'axios';
 import PostImage from '../components/post-image';
 import Helmet from "react-helmet";
+import { getPosts } from '../global/posts';
+
+const POSTS_PER_PAGE = 9;
 
 class Blog extends React.Component {
 
@@ -20,18 +22,21 @@ class Blog extends React.Component {
         this.getPosts(this.props.match.params.pageNum);
     }
 
+    componentDidUpdate(prevProps){
+        if(prevProps.match.params.pageNum !== this.props.match.params.pageNum){
+            this.getPosts(this.props.match.params.pageNum);
+        }
+    }
+
     getPosts(page = 1){
-        let url = window.apiUrl+'/wp-json/wp/v2/posts?per_page=9&page='+page;
-        axios.get(url)
-        .then( res => {
-            return res;
-        } )
-        .then( res => {
-            let posts = res.data;
+        page = parseInt(page) || 1;
+        getPosts()
+        .then( allPosts => {
+            let start = (page - 1) * POSTS_PER_PAGE;
             this.setState({
-                totalPages: parseInt(res.headers['x-wp-totalpages']),
-                posts: posts,
-                currentPage: parseInt(page)
+                totalPages: Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE)),
+                posts: allPosts.slice(start, start + POSTS_PER_PAGE),
+                currentPage: page
             });
             document.body.classList.remove('header-transparent');
         } );
@@ -44,7 +49,7 @@ class Blog extends React.Component {
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Blog | Mike's personal blog</title>
-                    <meta name="description" content="Mike's personal blog. Just another place to record my life. Build with react + Wordpress api. Will share more about life in silicon valley, programming, coding, startup." />
+                    <meta name="description" content="Mike's personal blog. Just another place to record my life. Build with react + Medium. Will share more about life in silicon valley, programming, coding, startup." />
                     <meta name="keywords" content="Mike, matrixki, programming, coding, javascript, startup, blog"></meta>                    
                     <meta property="og:image" content={ require('../static/img/post-placeholder.png') } />
                 </Helmet>                
@@ -71,9 +76,9 @@ class Blog extends React.Component {
                                 <div className="col-md-4 col-sm-6" key={post.id}>
                                     <div className="post-block">
                                         <Link to={ '/blog/' + post.slug }>
-                                            <PostImage media={ post.featured_media ? post.featured_media : false } substitute="display" />
-                                            <h2 className="post-title" dangerouslySetInnerHTML={{__html: post.title.rendered}}></h2>
-                                            <p className="excerpt" dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}></p>
+                                            <PostImage src={ post.image } alt={ post.title } substitute="display" />
+                                            <h2 className="post-title">{post.title}</h2>
+                                            <p className="excerpt">{post.excerpt}</p>
                                         </Link>
                                     </div>    
                                 </div>
@@ -85,7 +90,7 @@ class Blog extends React.Component {
                                 <ul className="pagination">
                                     { paginationListsSize.map( (value, index) => {
                                         return  <li className={ this.state.currentPage === (index+1) ? "page-item active" : "page-item" } key={index}>
-                                                    <Link to={"/blog/page/"+(index+1)} onClick={ () => this.getPosts(index+1)} className="page-link">{index+1}</Link>
+                                                    <Link to={"/blog/page/"+(index+1)} className="page-link">{index+1}</Link>
                                                 </li>
                                     })}
                                 </ul>
