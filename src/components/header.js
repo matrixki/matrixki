@@ -70,9 +70,6 @@ class Header extends React.Component {
                                 <li>
                                     <Link to="/blog">Blog</Link>
                                 </li>
-                                <li>
-                                    <a target="_blank" rel="noopener noreferrer" href="https://igtext.matrixki.com">Igtext</a>
-                                </li>                                
                             </ul>
                         </div>
                     </div>
