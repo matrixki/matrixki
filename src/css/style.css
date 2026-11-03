@@ -652,6 +652,62 @@ nav .breadcrumb {
   color: #f8f8f2;
   padding: 8px;
 }
+.post-article .post-content .code-block {
+  margin: 28px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0d1117;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.post-article .post-content .code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+.post-article .post-content .code-block-dots i {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+.post-article .post-content .code-block-dots i:nth-child(2) {
+  background: #febc2e;
+}
+.post-article .post-content .code-block-dots i:nth-child(3) {
+  background: #28c840;
+}
+.post-article .post-content .code-block-copy {
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: transparent;
+  color: #8b949e;
+  font-size: 12px;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+.post-article .post-content .code-block-copy:hover {
+  color: #e6edf3;
+  border-color: #8b949e;
+}
+.post-article .post-content .code-block-pre {
+  margin: 0;
+  background: #0d1117;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.post-article .post-content .code-block-pre code.hljs {
+  display: block;
+  padding: 16px 18px;
+  background: transparent;
+  font-family: SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
 .post-article .post-content figure figcaption {
   font-size: 13px;
   color: #666666;

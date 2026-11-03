@@ -6,6 +6,7 @@ import TagLabel from '../components/tag-label';
 import Helmet from "react-helmet";
 import { FacebookProvider, Comments } from 'react-facebook';
 import { getPostBySlug } from '../global/posts';
+import { enhanceCodeBlocks } from '../global/code-blocks';
 
 class Post extends React.Component {
 
@@ -15,6 +16,7 @@ class Post extends React.Component {
             post: false,
             notFound: false,
         };
+        this.contentRef = React.createRef();
     }
 
     componentDidMount() {
@@ -24,7 +26,7 @@ class Post extends React.Component {
             this.setState({
                 post: post || false,
                 notFound: !post,
-            });
+            }, () => enhanceCodeBlocks(this.contentRef.current));
             document.body.classList.remove('header-transparent');
         } );
     }
@@ -73,7 +75,7 @@ class Post extends React.Component {
                                     <article className="post-article">
                                         <h1 className="post-title">{this.state.post.title}</h1>
                                         <PostImage src={ this.state.post.image } alt={ this.state.post.title } og={true} />
-                                        <div className="post-content" dangerouslySetInnerHTML={{__html: this.state.post.content}}></div>
+                                        <div className="post-content" ref={ this.contentRef } dangerouslySetInnerHTML={{__html: this.state.post.content}}></div>
                                         {
                                             this.state.post.tags.length > 0 && this.state.post.tags.map(
                                                 tag =>
