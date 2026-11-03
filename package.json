@@ -20,6 +20,7 @@
     "start": "react-scripts start",
     "prebuild": "npm run fetch-posts",
     "build": "react-scripts build",
+    "postbuild": "node scripts/generate-post-pages.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
